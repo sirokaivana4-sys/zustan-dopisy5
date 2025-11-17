@@ -1,0 +1,382 @@
+/* Základní nastavení */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Crimson Text", Georgia, "Times New Roman", serif;
+  background-color: #f7f1ea;
+  color: #3a2a1a;
+  line-height: 1.7;
+}
+
+/* Papírové pozadí – nahraď obrázek vlastním */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(to bottom right, rgba(255, 255, 255, 0.6), rgba(243, 223, 207, 0.8)),
+    url("assets/img/paper-texture.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+/* Skryté audio */
+audio {
+  display: none;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+}
+
+/* Hero sekce */
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem 4rem;
+  text-align: center;
+  color: #2b1e13;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 60%),
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(244, 224, 209, 0.9));
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 720px;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 45px rgba(117, 90, 63, 0.25);
+  border: 1px solid rgba(175, 140, 105, 0.4);
+}
+
+.eyebrow {
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #a0774b;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-weight: 600;
+  font-size: clamp(2.3rem, 4vw, 3.1rem);
+  margin: 0 0 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  margin: 0 0 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.audio-note {
+  font-size: 0.8rem;
+  color: #85624b;
+}
+
+/* Navigace */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 252, 248, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(193, 158, 124, 0.35);
+}
+
+.top-nav a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7a5838;
+  padding-bottom: 0.15rem;
+  position: relative;
+}
+
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 0;
+  height: 1px;
+  background: #c08b5a;
+  transition: width 0.25s ease;
+}
+
+.top-nav a:hover::after {
+  width: 100%;
+}
+
+/* Sekce */
+.section {
+  padding: 3rem 1.5rem 3.5rem;
+}
+
+.section.soft {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.section-heading {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.section-heading h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.section-heading p {
+  font-size: 0.95rem;
+  color: #85624b;
+}
+
+/* Dopisy */
+.letter-card {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  padding: 2rem 1.75rem;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(193, 158, 124, 0.45);
+  box-shadow: 0 12px 30px rgba(110, 76, 52, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.letter-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, transparent 40%, rgba(255, 244, 234, 0.6) 100%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.letter-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  position: relative;
+}
+
+.letter-meta {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #a0774b;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.letter-body {
+  position: relative;
+  font-size: 1.02rem;
+}
+
+.letter-body p {
+  margin: 0 0 0.9rem;
+}
+
+.letter-body p:first-child {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.signature {
+  margin-top: 1.25rem;
+  text-align: right;
+  font-family: "Playfair Display", serif;
+}
+
+/* Ke stažení */
+.downloads-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.download-card {
+  padding: 1.75rem 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px dashed rgba(193, 158, 124, 0.7);
+  box-shadow: 0 12px 30px rgba(110, 76, 52, 0.12);
+}
+
+.download-card h3 {
+  font-family: "Playfair Display", serif;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.download-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 0.75rem;
+}
+
+.download-list li {
+  margin-bottom: 0.4rem;
+}
+
+.download-list a {
+  color: #7a3d2b;
+  text-decoration: none;
+  position: relative;
+}
+
+.download-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.1rem;
+  width: 0;
+  height: 1px;
+  background: #c08b5a;
+  transition: width 0.2s ease;
+}
+
+.download-list a:hover::after {
+  width: 100%;
+}
+
+.small-note {
+  font-size: 0.8rem;
+  color: #85624b;
+}
+
+/* O stránce */
+.about-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(193, 158, 124, 0.5);
+}
+
+/* Tlačítka */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s ease, color 0.2s ease;
+  font-family: "Playfair Display", serif;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #c08b5a, #a86d4a);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(160, 96, 61, 0.45);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(160, 96, 61, 0.55);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #7a3d2b;
+  border: 1px solid rgba(160, 96, 61, 0.6);
+}
+
+.btn.ghost:hover {
+  background: rgba(160, 96, 61, 0.06);
+}
+
+/* Footer */
+.footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #7b5e45;
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(193, 158, 124, 0.4);
+}
+
+/* Animace */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsivita */
+@media (min-width: 720px) {
+  .hero {
+    padding-top: 4rem;
+  }
+
+  .hero-content {
+    padding: 3rem 3rem 2.5rem;
+  }
+
+  .downloads-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 2rem 1.6rem;
+  }
+
+  .section {
+    padding-inline: 1.25rem;
+  }
+
+  .letter-card {
+    padding-inline: 1.4rem;
+  }
+}
