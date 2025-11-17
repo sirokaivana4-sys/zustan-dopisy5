@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Malá kniha dopisů</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google fonty -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Skryté audio, ovládání řeší JavaScript a tlačítko -->
+  <audio id="bg-music" src="assets/music/romantic-piano.mp3" autoplay loop playsinline></audio>
+
+  <div class="page-wrapper">
+    <header class="hero" id="top">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Pro Tebe</p>
+        <h1>Malá kniha našich dopisů</h1>
+        <p class="hero-subtitle">Slova, která voní papírem, inkoustem a tebou.</p>
+        <div class="hero-actions">
+          <button class="btn primary" id="enable-audio-btn">Pustit hudbu</button>
+          <a class="btn ghost" href="#letters">Číst dopisy</a>
+        </div>
+        <p class="audio-note" id="audio-note">
+          Na některých mobilech se hudba spustí až po klepnutí na „Pustit hudbu“.
+        </p>
+      </div>
+    </header>
+
+    <nav class="top-nav">
+      <a href="#top">Úvod</a>
+      <a href="#letters">Dopisy</a>
+      <a href="#downloads">Ke stažení</a>
+      <a href="#about">O stránce</a>
+    </nav>
+
+    <main>
+      <section class="section" id="letters">
+        <div class="section-heading">
+          <h2>Dopisy pro Tebe</h2>
+          <p>Vybrané stránky z naší tiché, každodenní romantiky.</p>
+        </div>
+
+        <article class="letter-card fade-in">
+          <h3>Dopis první – Ráno, kdy všechno začalo</h3>
+          <p class="letter-meta">Napsáno: 14. února 2025 · Místo: u kuchyňského stolu</p>
+          <div class="letter-body">
+            <p>Milá lásko,</p>
+            <p>
+              dnešní ráno vonělo úplně jinak. Voda v konvici bublala stejně jako vždycky,
+              tramvaje rachotily pod okny, ale mezi tím vším byl klid, který neumím pojmenovat.
+              Možná to bylo tím, že jsem se probudil s jistotou, že ti chci napsat tenhle dopis.
+            </p>
+            <p>
+              Přemýšlel jsem nad všemi drobnostmi, které na tobě miluju – tím, jak si
+              zastrkuješ vlasy za ucho, když přemýšlíš, jak si kreslíš malé hvězdičky
+              do rohu papíru, když se nudíš, a jak se ti oči na chvíli ztratí do dálky,
+              když slyšíš svou oblíbenou písničku.
+            </p>
+            <p>
+              Nechci velká gesta, stačí mi ta malá. Šálky po kávě vedle sebe na lince.
+              Tvůj svetr zapomenutý na opěradle židle. To, že tu jsi, i když je ticho.
+            </p>
+            <p>
+              Dnes ti chci jen říct: děkuju, že z obyčejných rán děláš ty, na která
+              se těším ještě předtím, než zavřu oči.
+            </p>
+            <p class="signature">
+              Navždy tvůj<br>
+              P.
+            </p>
+          </div>
+        </article>
+
+        <article class="letter-card fade-in">
+          <h3>Dopis druhý – Večer, kdy se město ztišilo</h3>
+          <p class="letter-meta">Napsáno: 3. března 2025 · Místo: někde mezi zastávkou a domovem</p>
+          <div class="letter-body">
+            <p>Milá,</p>
+            <p>
+              venku prší a město se leskne jako promáčené pohlednice ve výloze starého
+              antikvariátu. Všichni spěchají domů, ale mně se nechce pospíchat. V kapse
+              mám sluchátka, v hlavě naši písničku a v ruce tenhle dopis pro tebe.
+            </p>
+            <p>
+              Přemýšlel jsem, kolik slov ti denně neřeknu. Kolik z nich nechám spadnout
+              na dno šálku s čajem, kolik se rozplyne někde mezi výtahem a dveřmi od bytu.
+              A tak jsem se rozhodl je dnes zachytit: všechna ta potichu vyslovená
+              „jsem rád, že jsi“, která možná nejsou slyšet nahlas, ale pulsují někde
+              pod kůží každé minuty s tebou.
+            </p>
+            <p>
+              Kdybych mohl, zarámoval bych dnešní večer. Přibouchl bych k němu tvůj smích,
+              rozmazané světlo lamp a tichý klid, když si opřeš hlavu o mé rameno.
+            </p>
+            <p>
+              A kdyby se ten obraz někdy ztratil, budu vědět, že stačí, abych ti znova
+              napsal dopis. A všechno se vrátí.
+            </p>
+            <p class="signature">
+              S láskou<br>
+              P.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section soft" id="downloads">
+        <div class="section-heading">
+          <h2>Ke stažení</h2>
+          <p>Pro chvíle, kdy chceš mít naše dopisy a hudbu u sebe i offline.</p>
+        </div>
+
+        <div class="downloads-grid">
+          <div class="download-card fade-in">
+            <h3>Hudba na pozadí</h3>
+            <p>Romantické klavírní pozadí, které můžeš poslouchat kdykoliv.</p>
+            <a class="btn primary" href="assets/music/romantic-piano.mp3" download>Stáhnout píseň (MP3)</a>
+            <p class="small-note">
+              Tip: MP3 si můžeš později vyměnit za svou vlastní nahrávku. Stačí zachovat stejný název souboru.
+            </p>
+          </div>
+
+          <div class="download-card fade-in">
+            <h3>Dopisy jako PDF</h3>
+            <ul class="download-list">
+              <li><a href="assets/letters/dopis-1.pdf" target="_blank">Dopis první – Ráno, kdy všechno začalo (PDF)</a></li>
+              <li><a href="assets/letters/dopis-2.pdf" target="_blank">Dopis druhý – Večer, kdy se město ztišilo (PDF)</a></li>
+            </ul>
+            <p class="small-note">
+              Nahraj vlastní PDF soubory do složky <code>assets/letters/</code> se stejnými názvy, nebo odkaz v HTML uprav.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-heading">
+          <h2>O téhle stránce</h2>
+        </div>
+        <div class="about-content fade-in">
+          <p>
+            Tato stránka je jednoduchá „digitální kniha“ – místo, kde se hudba potichu
+            mísí se slovy a kde můžeš sbírat dopisy, vzkazy a malé momenty pro někoho,
+            na kom ti záleží.
+          </p>
+          <p>
+            Můžeš přidávat další dopisy, PDF soubory, upravit hudbu i pozadí. Všechno je
+            postavené na statické stránce hostované přes GitHub Pages, takže nic nestojí
+            peníze a funguje to i na telefonu.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Vytvořeno s láskou. &copy; <span id="year"></span></p>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
